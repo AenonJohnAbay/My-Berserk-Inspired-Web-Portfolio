@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Berserk</title>
+  <style>
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url(guts.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.nav {
+  position: fixed;
+  width: 400px;
+  height: 50px;
+  float: left;
+  max-width: 100%;
+  z-index: 10;
+}
+
+#me {
+  width: 200px;
+  height: 100px;
+  padding-top: 10px;
+  padding-left: 25px;
+  float: left;
+}
+
+.abay{
+  width: 40px;
+  height: 20px;
+  float: left;
+  margin-top: 10px;
+}
+
+ul {
+  display: flex;
+  padding-left: 30px;
+  margin: 25px 0px 0px 0px;
+}
+
+ul li {
+  list-style: none;
+  margin: 0px 0px 0px 50px;
+  font-size: 15px;
+  font-weight: bolder;
+  top: 0px;
+}
+
+ul li a {
+  color: rgb(184, 0, 0);
+  font-size: 17px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 4px;
+  font-weight: 100;
+  text-shadow: rgb(0, 0, 0) 50 50 50px ; 
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 7, 7);
+  border: 2px rgb(68, 0, 0);
+  border-radius: 5px;
+  box-shadow: 0 0 10px 10px rgb(255, 7, 7);
+  opacity: 0.6;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 80px;
+  padding-left: 20px;
+}
+
+.service1, .service2, .service3 {
+  width: calc(33.33% - 20px);
+  min-width: 170px;
+  max-width: 190px;
+  height: 370px;
+  padding: 35px;
+  color: white;
+  background-color: black;
+  border: 2px solid rgb(68, 0, 0);
+  border-radius: 10px;
+  opacity: 0.9;
+  box-shadow: 0 0 30px 10px rgb(180, 30, 30);
+  text-align: center;
+} 
+
+h2 {
+  color: white;
+  font-size: 15px;
+  font-family: monospace;
+}
+
+p {
+  font-weight: 900;
+  font-size: 15px;
+  font-family: monospace;
+  line-height: 15px;
+}
+
+strong {
+  color: rgb(231, 4, 4);
+}
+
+.avatar, .avatar1, .avatar4 {
+  width: 100%;
+  max-width: 190px;
+  opacity: 3.0;
+  margin-bottom: 10px;
+}
+.avatar1 {
+  margin-bottom: 49%;
+}
+
+input[type="submit"] {
+  width: 100%;
+  max-width: 150px;
+  background-color: #f11e1e;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover{
+    color: black;
+}
+
+
+#popup{
+  width: calc(33.33% - 20px);
+  min-width: 170px;
+  max-width: 190px;
+  height: 370px;
+  padding: 35px;
+  color: white;
+  background-color: black;
+  border: 2px solid rgb(68, 0, 0);
+  border-radius: 10px;
+  opacity: 0.9;
+  box-shadow: 0 0 30px 10px rgb(180, 30, 30);
+  text-align: center;
+}
+
+.popup1, .popup2, .popup3 {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	overflow: scroll;
+	color: white;
+	background-color: rgba(0,0,0, 0.5);
+}
+
+.popup-content{
+	background-color: black;
+	text-align: center;
+    margin-top: 50px;
+	padding: 50px 30px 50px 30px;
+	align-items: center;
+	width: 800px;
+	border-radius: 10px;
+	font-size: 16px;
+	line-height: 1.3;
+    box-shadow: 0 0 30px 10px rgb(180, 30, 30);
+}
+
+.popup-content h3{
+	color: white;
+	text-align: center;
+	padding-bottom: 1px;
+	margin-bottom: 0.5px;
+	font-size: 20px;
+}
+
+.popup-content img{
+	position: center;
+	border-radius: 100px;
+}
+.close-btn {
+	display: flex;
+	justify-content: center;
+	justify-self: center;
+	width: 30%;
+	background-color: #f11e1e;
+	border: none;
+	border-radius: 8px;
+	padding: 5px;
+	font-size: 16px;
+    font-weight: bold;
+	color: white;
+}
+
+.close-btn:hover{
+	color: black;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service1, .service2, .service3 {
+    width: 80%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .service1, .service2, .service3 {
+    width: 90%;
+  }
+}
+  </style>
+  </head>
+  <body>
+    <div class="nav">
+      <img src="berserkk.png" alt="Odin's Army Emblem" id="me">
+      <img src="berk.png" alt="ABAY" class="abay">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="service.html">SERVICE</a></li>
+        <li><a href="">DESIGN</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+    <br>
+    <div class="main">
+      <div class="service1">
+        <img src="BerserkManga.png" alt="Avatar" class="avatar">
+        <h2>Berserk Manga</h2>
+        <p><strong>Read Berserk Manga to be stronk</strong></p>
+        <input type="submit" id="modal-button1" value="Read More &#x27A4;" onclick="showPopup1('Manga')">
+      </div>
+      <div class="service2">
+        <img src="BerserkAnime.png" alt="Avatar" class="avatar1">
+        <h2>Berserk Anime</h2>
+        <p><strong>Watch Berserk Anime to be stronk</strong></p>
+        <input type="submit" id="modal-button2" value="Read More &#x27A4;" onclick="showPopup2('Anime')">
+      </div>
+      <div class="service3">
+        <img src="BerserkMerch.png" alt="Avatar" class="avatar">
+        <h2>Berserk Merch</h2>
+        <p><strong>Buy Berserk Merch to be stronk</strong></p>
+        <input type="submit" id="modal-button3" value="Read More &#x27A4;" onclick="showPopup3('Merch')">
+      </div>
+    </div>
+
+    <div id="popup1" class="popup1" style="display: none;">
+      <div class="popup-content" id="popup-content">
+        <img src="BerserkManga.png" alt="Avatar" class="avatar">
+        <h3 id="popup1-title">Manga</h3>
+        <p><strong>Berserk (Japanese: ベルセルク, Hepburn: Beruseruku)</strong> is a Japanese manga series written 
+          and illustrated by Kentaro Miura. Set in a medieval Europe–inspired dark fantasy world, 
+          the story centers on the characters of Guts, a lone swordsman, and Griffith, the leader 
+          of a mercenary band called the "Band of the Hawk". The series follows Guts' journey seeking 
+          revenge on Griffith, who betrayed him and sacrificed his comrades to become a powerful 
+          demonic being.</p>
+        <button class="close-btn" onclick="closePopup1()">Close</button>
+      </div>
+    </div>
+    <div id="popup2" class="popup2" style="display: none;">
+      <div class="popup-content" id="popup-content">
+        <img src="BerserkAnime.png" alt="Avatar" class="avatar4">
+        <h3 id="popup2-title">Anime</h3>
+        <p><strong>Berserk (Japanese: ベルセルク, Hepburn: Beruseruku)</strong> is a 2016 Japanese anime 
+          television series based on Kentaro Miura's manga series of the same name and 
+          an acting sequel to the Golden Age Arc film trilogy. This is the second television 
+          series adaptation of the manga after the 1997 anime of the same name, covering the 
+          Conviction arc from the manga. A second season, covering the first half of the Hawk
+          of the Millennium Empire arc, aired in 2017.</p>
+        <button class="close-btn" onclick="closePopup2()">Close</button>
+      </div>
+    </div>
+    <div id="popup3" class="popup3" style="display: none;">
+      <div class="popup-content" id="popup-content">
+        <img src="BerserkMerch.png" alt="Avatar" class="avatar">
+        <h3 id="popup3-title">Merchandise</h3>
+        <p><strong>Berserk merchandise</strong> is a tribute to the dark and brutal world of Kentaro Miura’s legendary manga,
+           Berserk. Fans can find a wide variety of merchandise featuring iconic symbols like the Brand
+           S of Sacrifice, Dragon Slayer, and Guts' Berserker Armor, all capturing the series' gritty aesthetic.</p>
+        <button class="close-btn" onclick="closePopup3()">Close</button>
+      </div>  
+    </div>
+
+    <script>
+      function showPopup1(title){
+        document.getElementById('popup1-title').textContent = title;
+        document.getElementById('popup1').style.display = 'flex';
+      }
+
+      function closePopup1(){
+        document.getElementById('popup1').style.display = 'none';
+      }
+
+      function showPopup2(title){
+        document.getElementById('popup2-title').textContent = title;
+        document.getElementById('popup2').style.display = 'flex';
+      }
+
+      function closePopup2(){
+        document.getElementById('popup2').style.display = 'none';
+      }
+
+      function showPopup3(title){
+        document.getElementById('popup3-title').textContent = title;
+        document.getElementById('popup3').style.display = 'flex';
+      }
+
+      function closePopup3(){
+        document.getElementById('popup3').style.display = 'none';
+      }
+    </script>
+  </body>
+</html>

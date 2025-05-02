@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Berserk</title>
+  <style>
+    body{
+      font-family: Helvetica, sans-serif;
+      background-color: rgb(0, 0, 0);
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      background-image: url(guts.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      overflow: hidden; 
+    }
+
+    #me {
+      width: 200px;
+      height: 100px;
+      padding-top: 10px;
+      padding-left: 25px;
+      float: left;
+    }
+
+    .abay{
+      width: 40px;
+      height: 20px;
+      float: left;
+      margin-top: 10px;
+    }
+
+    .nav {
+      position: fixed;
+      width: 400px;
+      height: 50px;
+      float: left;
+      max-width: 100%;
+      z-index: 10;
+    }
+
+    ul {
+      display: flex;
+      padding-left: 30px;
+      margin: 25px 0px 0px 0px;
+    }
+
+    ul li {
+      list-style: none;
+      margin: 0px 0px 0px 50px;
+      font-size: 15px;
+      font-weight: bolder;
+      top: 0px;
+    }
+
+    ul li a {
+      color: rgb(184, 0, 0);
+      font-size: 17px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      letter-spacing: 4px;
+      font-weight: 100;
+      text-shadow: rgb(0, 0, 0) 50 50 50px ; 
+      text-decoration: none;
+    }
+    
+    a:hover {
+      color: rgb(0, 0, 0);
+      background-color: rgb(255, 7, 7);
+      border: 2px rgb(68, 0, 0);
+      border-radius: 5px;
+      box-shadow: 0 0 10px 10px rgb(255, 7, 7);
+      opacity: 0.6;
+    }
+
+    .about{
+      position: relative;
+      max-width: 190px;
+      max-height: 370px;
+      margin: 80px 500px 80px 500px;
+      width: 15%;
+      height: 370px;
+      padding: 50px;
+      color:white;
+      background-color: black;
+      border: 2px solid rgb(68, 0, 0);
+      border-radius: 10px;
+      opacity: 0.8;
+      box-shadow: 0 0 30px 10px rgb(180, 30, 30);
+    }
+    h2 {
+      width: 100%;
+      text-align: center;
+      color:white;
+      text-align: center;
+      font-size: 15px;
+      font-family: monospace;
+    }
+
+    p{
+      font-weight: 900;
+      font-size: 15px;
+      font-family: monospace;
+      line-height: 15px;
+    }
+
+    strong{
+      color: rgb(231, 4, 4);
+    }
+    .avatar {
+      opacity: 3.0;
+      margin-left: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        overflow: hidden; 
+        width: 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      ul {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+      }
+
+      ul li {
+        margin: 5px 0;
+      }
+
+      .about {
+        position: relative;
+        margin: 50px auto;
+        right: auto;
+        transform: none;
+        width: 90%;
+        max-width: 190px;
+        max-height: 370px;
+      }
+    }
+  </style>
+  </head>
+  <body>
+    <div class="nav">
+      <img src="berserkk.png" alt="Odin's Army Emblem" id="me">
+      <img src="berk.png" alt="ABAY" class="abay">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="service.html">SERVICE</a></li>
+        <li><a href="">DESIGN</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+    <br>
+    <div class="about">
+      <img src="OdinsArmy.png" width="170" height="170" alt="Avatar" class="avatar">
+      <h2>“There’s no paradise... For you to escape to”</h2>
+      <p><strong>Name:</strong>Aenon John S. Abay</p>
+      <p><strong>Course & Yr:</strong> BSCS-1</p>
+      <p><strong>Age:</strong> 19</p>
+      <p><strong>Hobbies:</strong> Play music instruments, Watch documentaries, Watch movies</p>
+    </div>
+  </body>
+</html>
